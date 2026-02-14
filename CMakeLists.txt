@@ -25,3 +25,8 @@ add_executable(lsp_example
     src/solid/lsp.cpp 
     examples/solid/lsp_example.cpp
 )
+
+add_executable(isp_example 
+    src/solid/isp.cpp 
+    examples/solid/isp_example.cpp
+)

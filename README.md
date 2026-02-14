@@ -43,7 +43,7 @@ This repository contains implementations of various design patterns using modern
 - [x] Single Responsibility Principle (SRP) - [View](include/solid/srp.h) | [Example](examples/solid/srp_example.cpp)
 - [x] Open/Closed Principle (OCP) - [View](include/solid/ocp.h) | [Example](examples/solid/ocp_example.cpp)
 - [x] Liskov Substitution Principle (LSP) - [View](include/solid/lsp.h) | [Example](examples/solid/lsp_example.cpp)
-- [ ] Interface Segregation Principle (ISP)
+- [x] Interface Segregation Principle (ISP) - [View](include/solid/isp.h) | [Example](examples/solid/isp_example.cpp)
 - [ ] Dependency Inversion Principle (DIP)
 
 ## Build Instructions
@@ -114,6 +114,22 @@ Using g++:
 ```bash
 g++ -std=c++17 -I./include src/solid/lsp.cpp examples/solid/lsp_example.cpp -o build/lsp_example
 ./build/lsp_example
+```
+
+### Interface Segregation Principle (ISP)
+
+Using clang++ (macOS):
+
+```bash
+clang++ -std=c++17 -I./include src/solid/isp.cpp examples/solid/isp_example.cpp -o build/isp_example
+./build/isp_example
+```
+
+Using g++:
+
+```bash
+g++ -std=c++17 -I./include src/solid/isp.cpp examples/solid/isp_example.cpp -o build/isp_example
+./build/isp_example
 ```
 
 ## Usage
