@@ -20,3 +20,8 @@ add_executable(ocp_example
     src/solid/ocp.cpp 
     examples/solid/ocp_example.cpp
 )
+
+add_executable(lsp_example 
+    src/solid/lsp.cpp 
+    examples/solid/lsp_example.cpp
+)
