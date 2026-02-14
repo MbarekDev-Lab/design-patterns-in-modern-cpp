@@ -44,7 +44,7 @@ This repository contains implementations of various design patterns using modern
 - [x] Open/Closed Principle (OCP) - [View](include/solid/ocp.h) | [Example](examples/solid/ocp_example.cpp)
 - [x] Liskov Substitution Principle (LSP) - [View](include/solid/lsp.h) | [Example](examples/solid/lsp_example.cpp)
 - [x] Interface Segregation Principle (ISP) - [View](include/solid/isp.h) | [Example](examples/solid/isp_example.cpp)
-- [ ] Dependency Inversion Principle (DIP)
+- [x] Dependency Inversion Principle (DIP) - [View](include/solid/dip.h) | [Example](examples/solid/dip_example.cpp)
 
 ## Build Instructions
 
@@ -130,6 +130,22 @@ Using g++:
 ```bash
 g++ -std=c++17 -I./include src/solid/isp.cpp examples/solid/isp_example.cpp -o build/isp_example
 ./build/isp_example
+```
+
+### Dependency Inversion Principle (DIP)
+
+Using clang++ (macOS):
+
+```bash
+clang++ -std=c++17 -I./include src/solid/dip.cpp examples/solid/dip_example.cpp -o build/dip_example
+./build/dip_example
+```
+
+Using g++:
+
+```bash
+g++ -std=c++17 -I./include src/solid/dip.cpp examples/solid/dip_example.cpp -o build/dip_example
+./build/dip_example
 ```
 
 ## Usage

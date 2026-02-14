@@ -30,3 +30,8 @@ add_executable(isp_example
     src/solid/isp.cpp 
     examples/solid/isp_example.cpp
 )
+
+add_executable(dip_example 
+    src/solid/dip.cpp 
+    examples/solid/dip_example.cpp
+)
