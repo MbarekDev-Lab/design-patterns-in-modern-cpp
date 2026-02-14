@@ -10,8 +10,8 @@ This repository contains implementations of various design patterns using modern
 
 ## Patterns Covered
 
-- [ ] Creational Patterns
-  - [ ] Singleton
+- [x] Creational Patterns
+  - [x] Singleton - [View](include/creational/singleton.h) | [Example](examples/creational/singleton_example.cpp)
   - [ ] Factory
   - [ ] Builder
   - [ ] Prototype
@@ -42,12 +42,32 @@ This repository contains implementations of various design patterns using modern
 
 Prerequisites:
 
-- C++17 compatible compiler
-- CMake (optional, depending on build setup)
+- C++17 compatible compiler (clang++, g++, or MSVC)
+
+### Compile Examples
+
+Using clang++ (macOS):
+
+```bash
+clang++ -std=c++17 -I./include examples/creational/singleton_example.cpp -o build/singleton_example
+./build/singleton_example
+```
+
+Using g++:
+
+```bash
+g++ -std=c++17 -I./include examples/creational/singleton_example.cpp -o build/singleton_example
+./build/singleton_example
+```
 
 ## Usage
 
-Each pattern is implemented in its own directory with examples and tests.
+Each pattern is implemented in its own directory:
+
+- `include/` - Header files with pattern implementations
+- `examples/` - Example programs demonstrating each pattern
+
+Run the examples directly after compilation to see the patterns in action.
 
 ## License
 
