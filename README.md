@@ -4,6 +4,10 @@ Course code from the Udemy course "Design Patterns in Modern C++".
 
 This repository contains implementations of various design patterns using modern C++ (C++17 and beyond).
 
+## Course
+
+[Design Patterns in Modern C++](https://www.udemy.com/course/patterns-cplusplus/learn/lecture/7736680?start=15#content) on Udemy
+
 ## Patterns Covered
 
 - [ ] Creational Patterns
@@ -12,7 +16,6 @@ This repository contains implementations of various design patterns using modern
   - [ ] Builder
   - [ ] Prototype
   - [ ] Abstract Factory
-  
 - [ ] Structural Patterns
   - [ ] Adapter
   - [ ] Bridge
@@ -38,6 +41,7 @@ This repository contains implementations of various design patterns using modern
 ## Build Instructions
 
 Prerequisites:
+
 - C++17 compatible compiler
 - CMake (optional, depending on build setup)
 
