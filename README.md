@@ -16,7 +16,6 @@ This repository contains implementations of various design patterns using modern
   - [ ] Builder
   - [ ] Prototype
   - [ ] Abstract Factory
-  
 - [ ] Structural Patterns
   - [ ] Adapter
   - [ ] Bridge
@@ -42,7 +41,7 @@ This repository contains implementations of various design patterns using modern
 ## SOLID Principles
 
 - [x] Single Responsibility Principle (SRP) - [View](include/solid/srp.h) | [Example](examples/solid/srp_example.cpp)
-- [ ] Open/Closed Principle (OCP)
+- [x] Open/Closed Principle (OCP) - [View](include/solid/ocp.h) | [Example](examples/solid/ocp_example.cpp)
 - [ ] Liskov Substitution Principle (LSP)
 - [ ] Interface Segregation Principle (ISP)
 - [ ] Dependency Inversion Principle (DIP)
@@ -56,12 +55,14 @@ Prerequisites:
 ### Singleton Pattern
 
 Using clang++ (macOS):
+
 ```bash
 clang++ -std=c++17 -I./include examples/creational/singleton_example.cpp -o build/singleton_example
 ./build/singleton_example
 ```
 
 Using g++:
+
 ```bash
 g++ -std=c++17 -I./include examples/creational/singleton_example.cpp -o build/singleton_example
 ./build/singleton_example
@@ -70,15 +71,33 @@ g++ -std=c++17 -I./include examples/creational/singleton_example.cpp -o build/si
 ### Single Responsibility Principle (SRP)
 
 Using clang++ (macOS):
+
 ```bash
 clang++ -std=c++17 -I./include src/solid/srp.cpp examples/solid/srp_example.cpp -o build/srp_example
 ./build/srp_example
 ```
 
 Using g++:
+
 ```bash
 g++ -std=c++17 -I./include src/solid/srp.cpp examples/solid/srp_example.cpp -o build/srp_example
 ./build/srp_example
+```
+
+### Open/Closed Principle (OCP)
+
+Using clang++ (macOS):
+
+```bash
+clang++ -std=c++17 -I./include src/solid/ocp.cpp examples/solid/ocp_example.cpp -o build/ocp_example
+./build/ocp_example
+```
+
+Using g++:
+
+```bash
+g++ -std=c++17 -I./include src/solid/ocp.cpp examples/solid/ocp_example.cpp -o build/ocp_example
+./build/ocp_example
 ```
 
 ## Usage

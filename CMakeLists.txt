@@ -15,3 +15,8 @@ add_executable(srp_example
     src/solid/srp.cpp 
     examples/solid/srp_example.cpp
 )
+
+add_executable(ocp_example 
+    src/solid/ocp.cpp 
+    examples/solid/ocp_example.cpp
+)
