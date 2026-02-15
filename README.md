@@ -13,7 +13,7 @@ This repository contains implementations of various design patterns using modern
 - [x] Creational Patterns
   - [x] Singleton - [View](include/creational/singleton.h) | [Example](examples/creational/singleton_example.cpp)
   - [ ] Factory
-  - [ ] Builder
+  - [x] Builder - [View](include/creational/builder.h) | [Example](examples/creational/builder_example.cpp)
   - [ ] Prototype
   - [ ] Abstract Factory
 - [ ] Structural Patterns
@@ -66,6 +66,22 @@ Using g++:
 ```bash
 g++ -std=c++17 -I./include examples/creational/singleton_example.cpp -o build/singleton_example
 ./build/singleton_example
+```
+
+### Builder Pattern (Creational)
+
+Using clang++ (macOS):
+
+```bash
+clang++ -std=c++17 -I./include src/creational/builder.cpp examples/creational/builder_example.cpp -o build/builder_example
+./build/builder_example
+```
+
+Using g++:
+
+```bash
+g++ -std=c++17 -I./include src/creational/builder.cpp examples/creational/builder_example.cpp -o build/builder_example
+./build/builder_example
 ```
 
 ### Single Responsibility Principle (SRP)

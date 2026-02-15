@@ -10,6 +10,11 @@ include_directories(include)
 # Creational Patterns
 add_executable(singleton_example examples/creational/singleton_example.cpp)
 
+add_executable(builder_example 
+    src/creational/builder.cpp 
+    examples/creational/builder_example.cpp
+)
+
 # SOLID Principles
 add_executable(srp_example 
     src/solid/srp.cpp 
