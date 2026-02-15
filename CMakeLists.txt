@@ -15,6 +15,11 @@ add_executable(builder_example
     examples/creational/builder_example.cpp
 )
 
+add_executable(html_elements_example 
+    src/creational/html_elements.cpp 
+    examples/creational/html_elements_example.cpp
+)
+
 # SOLID Principles
 add_executable(srp_example 
     src/solid/srp.cpp 

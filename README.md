@@ -14,6 +14,7 @@ This repository contains implementations of various design patterns using modern
   - [x] Singleton - [View](include/creational/singleton.h) | [Example](examples/creational/singleton_example.cpp)
   - [ ] Factory
   - [x] Builder - [View](include/creational/builder.h) | [Example](examples/creational/builder_example.cpp)
+  - [x] Type-Safe HTML Elements - [View](include/creational/html_elements.h) | [Example](examples/creational/html_elements_example.cpp)
   - [ ] Prototype
   - [ ] Abstract Factory
 - [ ] Structural Patterns
@@ -82,6 +83,22 @@ Using g++:
 ```bash
 g++ -std=c++17 -I./include src/creational/builder.cpp examples/creational/builder_example.cpp -o build/builder_example
 ./build/builder_example
+```
+
+### Type-Safe HTML Elements Pattern (Creational)
+
+Using clang++ (macOS):
+
+```bash
+clang++ -std=c++17 -I./include src/creational/html_elements.cpp examples/creational/html_elements_example.cpp -o build/html_elements_example
+./build/html_elements_example
+```
+
+Using g++:
+
+```bash
+g++ -std=c++17 -I./include src/creational/html_elements.cpp examples/creational/html_elements_example.cpp -o build/html_elements_example
+./build/html_elements_example
 ```
 
 ### Single Responsibility Principle (SRP)
