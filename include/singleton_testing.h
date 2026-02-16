@@ -6,6 +6,8 @@
 #include <map>
 #include <vector>
 #include <memory>
+// #include <boost/lexical_cast.hpp>
+// using namespace boost;
 
 using namespace std;
 
@@ -35,16 +37,34 @@ public:
 class SingletonDatabase : public Database
 {
 private:
+    static int instance_count;
+
     SingletonDatabase()
     {
         cout << "Initializing singleton database from file..." << endl;
+        instance_count++;
         // In real scenario, this would read from capitals.txt
+        /*ifstream ifs("capitals.txt");
+        if (!ifs)
+        {
+            cerr << "Failed to open capitals.txt, using hardcoded data\n";
+            string s, s2;
+
+            while (getline(ifs, s))
+            {
+                getline(ifs, s2);
+                int pop = lexical_cast<int>(s2);
+                capitals[s] = pop;
+            }
+        }*/
+
         // For demo, we'll use hardcoded data
         capitals["Tokyo"] = 37400068;
         capitals["Delhi"] = 32941000;
         capitals["Shanghai"] = 27058000;
         capitals["Sao Paulo"] = 22043028;
-        capitals["Mexico City"] = 21581000;
+        capitals["Mexico City"] = 17400000;
+        capitals["Seoul"] = 17500000;
     }
 
     map<string, int> capitals;
@@ -64,6 +84,12 @@ public:
     int get_population(const string &name) override
     {
         return capitals[name];
+    }
+
+    // Property for testing
+    static int get_instance_count()
+    {
+        return instance_count;
     }
 
     // For testing purposes - show database state
@@ -228,4 +254,5 @@ public:
 };
 
 // Static member definition
+int SingletonDatabase::instance_count = 0;
 unique_ptr<Database> ServiceLocator::instance = nullptr;
