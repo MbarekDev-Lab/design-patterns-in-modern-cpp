@@ -509,3 +509,82 @@ int main()
 
     return 0;
 }
+
+// ============================================================================
+// ALTERNATIVE: GOOGLE TEST (GTEST) VERSION
+// ============================================================================
+// Uncomment the section below and link with gtest to run as gtest suite
+// Compile: clang++ -std=c++17 -I/path/to/gtest/include Prototype_Exercise.cpp -lgtest -o test
+// ============================================================================
+
+/*
+#include <gtest/gtest.h>
+
+namespace PrototypeExerciseTests
+{
+  class DeepCopyTest : public testing::Test
+  {
+  };
+
+  TEST_F(DeepCopyTest, SimpleDeepCopy)
+  {
+    Line line1{
+      new Point{3, 3},
+      new Point{10, 10}
+    };
+
+    auto line2 = line1.deep_copy();
+    line1.start->x = line1.start->y =
+      line1.end->x = line1.end->y = 0;
+
+    ASSERT_EQ(3, line2.start->x);
+    ASSERT_EQ(3, line2.start->y);
+    ASSERT_EQ(10, line2.end->x);
+    ASSERT_EQ(10, line2.end->y);
+  }
+
+  TEST_F(DeepCopyTest, IndependentPointers)
+  {
+    Line original{new Point{5, 5}, new Point{15, 15}};
+    auto cloned = original.deep_copy();
+
+    ASSERT_NE(original.start, cloned.start);
+    ASSERT_NE(original.end, cloned.end);
+  }
+
+  TEST_F(DeepCopyTest, ChainCopying)
+  {
+    Line line1{new Point{1, 1}, new Point{2, 2}};
+    auto line2 = line1.deep_copy();
+    auto line3 = line2.deep_copy();
+
+    ASSERT_EQ(1, line3.start->x);
+    ASSERT_EQ(1, line3.start->y);
+    ASSERT_EQ(2, line3.end->x);
+    ASSERT_EQ(2, line3.end->y);
+
+    ASSERT_NE(line1.start, line2.start);
+    ASSERT_NE(line2.start, line3.start);
+  }
+
+  TEST_F(DeepCopyTest, IndependentModifications)
+  {
+    Line original{new Point{0, 0}, new Point{10, 10}};
+    auto modified = original.deep_copy();
+
+    modified.start->x = 100;
+    modified.end->y = 200;
+
+    ASSERT_EQ(0, original.start->x);
+    ASSERT_EQ(10, original.end->y);
+  }
+
+} // namespace PrototypeExerciseTests
+
+int gtest_main(int argc, char **argv)
+{
+  testing::InitGoogleTest(&argc, argv);
+  return RUN_ALL_TESTS();
+}
+
+*/
