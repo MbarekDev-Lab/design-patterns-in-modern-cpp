@@ -2,6 +2,7 @@
 #include <iostream>
 #include <memory>
 #include <vector>
+#include <sstream>
 
 using namespace std;
 
@@ -315,6 +316,193 @@ void example8_database_bridge()
 }
 
 // ============================================================================
+// EXAMPLE 9: Shape Bridge with String Rendering
+// ============================================================================
+
+void example9_shape_bridge_string()
+{
+    cout << "\n═══════════════════════════════════════════════════════════\n";
+    cout << "EXAMPLE 8: Shape Bridge with String Rendering\n";
+    cout << "═══════════════════════════════════════════════════════════\n\n";
+
+    cout << "Pattern: Shape abstraction with Renderer bridge\n";
+    cout << "Benefit: Renderers determine HOW to draw\n";
+    cout << "         Shapes determine WHAT to draw\n\n";
+
+    // Define renderers
+    struct Renderer
+    {
+        virtual string what_to_render_as() const = 0;
+        virtual ~Renderer() = default;
+    };
+
+    struct RasterRenderer : Renderer
+    {
+        string what_to_render_as() const override
+        {
+            return "pixels";
+        }
+    };
+
+    struct VectorRenderer : Renderer
+    {
+        string what_to_render_as() const override
+        {
+            return "lines";
+        }
+    };
+
+    // Define shapes
+    struct Shape
+    {
+        string name;
+        const Renderer &renderer;
+
+        Shape(const Renderer &r) : renderer(r) {}
+
+        string str() const
+        {
+            ostringstream oss;
+            oss << "Drawing " << name << " as " << renderer.what_to_render_as();
+            return oss.str();
+        }
+    };
+
+    struct Triangle : Shape
+    {
+        explicit Triangle(const Renderer &renderer) : Shape(renderer)
+        {
+            name = "Triangle";
+        }
+    };
+
+    struct Square : Shape
+    {
+        explicit Square(const Renderer &renderer) : Shape(renderer)
+        {
+            name = "Square";
+        }
+    };
+
+    struct Circle : Shape
+    {
+        explicit Circle(const Renderer &renderer) : Shape(renderer)
+        {
+            name = "Circle";
+        }
+    };
+
+    // Usage
+    RasterRenderer raster;
+    VectorRenderer vector;
+
+    Triangle t1(raster);
+    Triangle t2(vector);
+
+    Square s1(raster);
+    Square s2(vector);
+
+    Circle c(vector);
+
+    cout << t1.str() << "\n";
+    cout << t2.str() << "\n";
+    cout << s1.str() << "\n";
+    cout << s2.str() << "\n";
+    cout << c.str() << "\n";
+
+    cout << "\n";
+}
+
+// ============================================================================
+// EXAMPLE 10: Circle Bridge with Draw and Resize
+// ============================================================================
+
+void example10_circle_bridge_render()
+{
+    cout << "\n═══════════════════════════════════════════════════════════\n";
+    cout << "EXAMPLE 9: Circle Bridge with Draw and Resize Operations\n";
+    cout << "═══════════════════════════════════════════════════════════\n\n";
+
+    cout << "Pattern: Shape with Renderer bridge + operations\n";
+    cout << "Benefit: Renderer is abstracted from shape operations\n\n";
+
+    // Renderer interface
+    struct CircleRenderer
+    {
+        virtual void render_circle(float x, float y, float radius) = 0;
+        virtual ~CircleRenderer() = default;
+    };
+
+    struct VectorCircleRenderer : CircleRenderer
+    {
+        void render_circle(float x, float y, float radius) override
+        {
+            cout << "  Drawing vector circle at (" << x << "," << y
+                 << ") with radius " << radius << "\n";
+        }
+    };
+
+    struct RasterCircleRenderer : CircleRenderer
+    {
+        void render_circle(float x, float y, float radius) override
+        {
+            cout << "  Rasterizing circle at (" << x << "," << y
+                 << ") with radius " << radius << "\n";
+        }
+    };
+
+    // Shape abstraction
+    struct Shape
+    {
+    protected:
+        CircleRenderer &renderer;
+        Shape(CircleRenderer &r) : renderer(r) {}
+
+    public:
+        virtual ~Shape() = default;
+        virtual void draw() = 0;
+        virtual void resize(float factor) = 0;
+    };
+
+    struct CircleShape : Shape
+    {
+        float x, y, radius;
+
+        CircleShape(CircleRenderer &renderer, float x, float y, float r)
+            : Shape(renderer), x(x), y(y), radius(r) {}
+
+        void draw() override
+        {
+            renderer.render_circle(x, y, radius);
+        }
+
+        void resize(float factor) override
+        {
+            radius *= factor;
+        }
+    };
+
+    // Usage
+    VectorCircleRenderer vector_renderer;
+    RasterCircleRenderer raster_renderer;
+
+    CircleShape my_circle(vector_renderer, 10.0f, 10.0f, 5.0f);
+
+    cout << "Initial circle (vector rendered):\n";
+    my_circle.draw();
+
+    cout << "\nAfter resize(2):\n";
+    my_circle.resize(2.0f);
+    my_circle.draw();
+
+    cout << "\nSame circle with raster renderer:\n";
+    CircleShape raster_circle(raster_renderer, 10.0f, 10.0f, 10.0f);
+    raster_circle.draw();
+
+    cout << "\n";
+}
+
+// ============================================================================
 // MAIN
 // ============================================================================
 
@@ -363,6 +551,8 @@ int main()
     example6_shape_renderer();
     example7_mixed_shapes_renderers();
     example8_database_bridge();
+    example9_shape_bridge_string();
+    example10_circle_bridge_render();
 
     cout << "═══════════════════════════════════════════════════════════\n";
     cout << "All examples completed successfully!\n";
