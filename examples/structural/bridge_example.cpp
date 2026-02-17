@@ -9,24 +9,6 @@ using namespace std;
 // BRIDGE PATTERN EXAMPLES
 // ============================================================================
 
-// Implementations for the simple Pimpl bridge (from reference)
-void bridge_solution::Person::PersonImpl::greet(Person *p)
-{
-    printf("Hello %s\n", p->name.c_str());
-}
-
-bridge_solution::Person::Person()
-    : impl(std::make_unique<PersonImpl>())
-{
-}
-
-bridge_solution::Person::~Person() = default;
-
-void bridge_solution::Person::greet()
-{
-    impl->greet(this);
-}
-
 // ============================================================================
 // EXAMPLE 1: Simple Pimpl Bridge (Reference Implementation)
 // ============================================================================
@@ -52,13 +34,40 @@ void example1_simple_pimpl()
 }
 
 // ============================================================================
-// EXAMPLE 2: Violation - Mixed Implementation and Interface
+// EXAMPLE 2: PIMPL Wrapper-Based Bridge Pattern
 // ============================================================================
 
-void example2_violation()
+void example2_pimpl_wrapper()
 {
     cout << "\n═══════════════════════════════════════════════════════════\n";
-    cout << "EXAMPLE 2: Violation - Tightly Coupled Implementation\n";
+    cout << "EXAMPLE 2: PIMPL Wrapper-Based Bridge\n";
+    cout << "═══════════════════════════════════════════════════════════\n\n";
+
+    cout << "Pattern: Template-based PIMPL wrapper for cleaner code\n";
+    cout << "Benefit: Reusable wrapper for any PIMPL pattern\n\n";
+
+    bridge_solution::Window window1;
+    window1.set_title("Main Window");
+    cout << "Window 1:\n";
+    window1.show();
+    window1.hide();
+
+    bridge_solution::Window window2;
+    window2.set_title("Settings");
+    cout << "\nWindow 2:\n";
+    window2.show();
+
+    cout << "\n";
+}
+
+// ============================================================================
+// EXAMPLE 3: Violation - Mixed Implementation and Interface
+// ============================================================================
+
+void example3_violation()
+{
+    cout << "\n═══════════════════════════════════════════════════════════\n";
+    cout << "EXAMPLE 3: Violation - Tightly Coupled Implementation\n";
     cout << "═══════════════════════════════════════════════════════════\n\n";
 
     cout << "Problem: All implementations mixed into single class\n";
@@ -78,13 +87,13 @@ void example2_violation()
 }
 
 // ============================================================================
-// EXAMPLE 3: Solution - Abstract Implementation Bridge
+// EXAMPLE 4: Solution - Abstract Implementation Bridge
 // ============================================================================
 
-void example3_abstract_bridge()
+void example4_abstract_bridge()
 {
     cout << "\n═══════════════════════════════════════════════════════════\n";
-    cout << "EXAMPLE 3: Abstract Implementation Bridge\n";
+    cout << "EXAMPLE 4: Abstract Implementation Bridge\n";
     cout << "═══════════════════════════════════════════════════════════\n\n";
 
     cout << "Solution: Separate interface from implementation\n";
@@ -116,7 +125,7 @@ void example3_abstract_bridge()
 // EXAMPLE 4: Device-Renderer Bridge
 // ============================================================================
 
-void example4_device_bridge()
+void example5_device_bridge()
 {
     cout << "\n═══════════════════════════════════════════════════════════\n";
     cout << "EXAMPLE 4: Device-Renderer Bridge (Remote Control)\n";
@@ -153,10 +162,10 @@ void example4_device_bridge()
 }
 
 // ============================================================================
-// EXAMPLE 5: Shape-Renderer Bridge
+// EXAMPLE 6: Shape-Renderer Bridge
 // ============================================================================
 
-void example5_shape_renderer()
+void example6_shape_renderer()
 {
     cout << "\n═══════════════════════════════════════════════════════════\n";
     cout << "EXAMPLE 5: Shape-Renderer Bridge\n";
@@ -193,7 +202,7 @@ void example5_shape_renderer()
 // EXAMPLE 6: Multiple Shapes with Different Renderers
 // ============================================================================
 
-void example6_mixed_shapes_renderers()
+void example7_mixed_shapes_renderers()
 {
     cout << "\n═══════════════════════════════════════════════════════════\n";
     cout << "EXAMPLE 6: Mixed Shapes and Renderers\n";
@@ -223,7 +232,7 @@ void example6_mixed_shapes_renderers()
 }
 
 // ============================================================================
-// EXAMPLE 7: Real-World - Database Connection Bridge
+// EXAMPLE 8: Real-World - Database Connection Bridge
 // ============================================================================
 
 class DatabaseConnection
@@ -281,7 +290,7 @@ private:
     std::shared_ptr<DatabaseConnection> impl_;
 };
 
-void example7_database_bridge()
+void example8_database_bridge()
 {
     cout << "\n═══════════════════════════════════════════════════════════\n";
     cout << "EXAMPLE 7: Real-World - Database Connection Bridge\n";
@@ -347,12 +356,13 @@ int main()
 
     // Run examples
     example1_simple_pimpl();
-    example2_violation();
-    example3_abstract_bridge();
-    example4_device_bridge();
-    example5_shape_renderer();
-    example6_mixed_shapes_renderers();
-    example7_database_bridge();
+    example2_pimpl_wrapper();
+    example3_violation();
+    example4_abstract_bridge();
+    example5_device_bridge();
+    example6_shape_renderer();
+    example7_mixed_shapes_renderers();
+    example8_database_bridge();
 
     cout << "═══════════════════════════════════════════════════════════\n";
     cout << "All examples completed successfully!\n";

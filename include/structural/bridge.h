@@ -20,6 +20,73 @@
 // 4. Decouple - Interface and implementation can evolve independently
 // ============================================================================
 
+namespace pimpl_wrapper
+{
+    // ========================================================================
+    // PIMPL WRAPPER - Generic template-based PIMPL pattern
+    // ========================================================================
+    // This template can wrap any implementation class, providing:
+    // - Automatic memory management with unique_ptr
+    // - Operator overloading for transparent access
+    // - Construction forwarding with perfect forwarding
+    // ========================================================================
+
+    template <typename T>
+    class PimplWrapper
+    {
+    private:
+        std::unique_ptr<T> impl;
+
+    public:
+        // Default constructor
+        PimplWrapper()
+            : impl(std::make_unique<T>())
+        {
+        }
+
+        // Destructor
+        ~PimplWrapper() = default;
+
+        // Perfect forwarding constructor for custom arguments
+        template <typename... Args>
+        explicit PimplWrapper(Args &&...args)
+            : impl(std::make_unique<T>(std::forward<Args>(args)...))
+        {
+        }
+
+        // Pointer access
+        T *operator->()
+        {
+            return impl.get();
+        }
+
+        const T *operator->() const
+        {
+            return impl.get();
+        }
+
+        // Dereference access
+        T &operator*()
+        {
+            return *impl.get();
+        }
+
+        const T &operator*() const
+        {
+            return *impl.get();
+        }
+
+        // Move semantics
+        PimplWrapper(PimplWrapper &&) = default;
+        PimplWrapper &operator=(PimplWrapper &&) = default;
+
+        // Delete copy semantics
+        PimplWrapper(const PimplWrapper &) = delete;
+        PimplWrapper &operator=(const PimplWrapper &) = delete;
+    };
+
+} // namespace pimpl_wrapper
+
 namespace bridge_violation
 {
     // ========================================================================
@@ -123,8 +190,68 @@ namespace bridge_solution
     {
         std::cout << "Hello " << p->name << "\n";
     }
+
     // ========================================================================
-    // SOLUTION 2: Abstract Implementation Bridge
+    // SOLUTION 2: PIMPL Wrapper-Based Bridge
+    // ========================================================================
+    // Using the template-based PIMPL wrapper for cleaner, reusable code
+
+    class Window
+    {
+    public:
+        class WindowImpl;
+
+        Window();
+        ~Window();
+
+        void set_title(const std::string &title);
+        void show();
+        void hide();
+
+    private:
+        pimpl_wrapper::PimplWrapper<WindowImpl> pimpl;
+        friend class WindowImpl;
+    };
+
+    class Window::WindowImpl
+    {
+    public:
+        std::string title;
+        bool visible = false;
+
+        void show()
+        {
+            visible = true;
+            std::cout << "    Window '" << title << "' is now visible\n";
+        }
+
+        void hide()
+        {
+            visible = false;
+            std::cout << "    Window '" << title << "' is now hidden\n";
+        }
+    };
+
+    inline Window::Window() = default;
+    inline Window::~Window() = default;
+
+    inline void Window::set_title(const std::string &title)
+    {
+        pimpl->title = title;
+    }
+
+    inline void Window::show()
+    {
+        pimpl->show();
+    }
+
+    inline void Window::hide()
+    {
+        pimpl->hide();
+    }
+
+    // ========================================================================
+    // SOLUTION 3: Abstract Implementation Bridge
     // ========================================================================
     // Allows swappable implementations through inheritance
 
