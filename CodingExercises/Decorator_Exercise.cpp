@@ -386,6 +386,127 @@ void test_decorator_composition_flexibility()
 }
 
 // ============================================================================
+// FLOWER DECORATOR EXERCISE - Smart Color Deduplication
+// ============================================================================
+
+namespace flower_exercise
+{
+
+    // Base component
+    struct Flower
+    {
+        virtual string str() = 0;
+        virtual ~Flower() = default;
+    };
+
+    // Concrete component
+    struct Rose : Flower
+    {
+        string str() override
+        {
+            return "A rose";
+        }
+    };
+
+    // Color decorator - avoids duplicating colors, handles "and" properly
+    struct RedFlower : Flower
+    {
+        Flower &flower;
+
+        RedFlower(Flower &flower) : flower(flower) {}
+
+        string str() override
+        {
+            string s = flower.str();
+
+            // Already red - don't duplicate
+            if (s.find("red") != string::npos)
+                return s;
+
+            // Blue exists, add "and red"
+            if (s.find("blue") != string::npos)
+                return s + " and red";
+
+            // First color - use "that is"
+            return s + " that is red";
+        }
+    };
+
+    // Another color decorator
+    struct BlueFlower : Flower
+    {
+        Flower &flower;
+
+        BlueFlower(Flower &flower) : flower(flower) {}
+
+        string str() override
+        {
+            string s = flower.str();
+
+            // Already blue - don't duplicate
+            if (s.find("blue") != string::npos)
+                return s;
+
+            // Red exists, add "and blue"
+            if (s.find("red") != string::npos)
+                return s + " and blue";
+
+            // First color - use "that is"
+            return s + " that is blue";
+        }
+    };
+
+} // namespace flower_exercise
+
+void test_flower_decorator_exercise()
+{
+    using namespace flower_exercise;
+
+    // Test case 1: Plain rose
+    Rose rose;
+    ASSERT_EQ(rose.str(), "A rose");
+
+    // Test case 2: Red flower
+    RedFlower red_rose(rose);
+    ASSERT_EQ(red_rose.str(), "A rose that is red");
+
+    // Test case 3: Double red (no duplication)
+    RedFlower double_red(red_rose);
+    ASSERT_EQ(double_red.str(), "A rose that is red");
+
+    // Test case 4: Red then blue (compound color)
+    BlueFlower blue_red(red_rose);
+    ASSERT_EQ(blue_red.str(), "A rose that is red and blue");
+
+    // Test case 5: Blue then red (opposite order)
+    Rose rose2;
+    BlueFlower blue_rose(rose2);
+    RedFlower red_blue(blue_rose);
+    ASSERT_EQ(red_blue.str(), "A rose that is blue and red");
+
+    // Test case 6: Double blue (no duplication)
+    BlueFlower double_blue(blue_rose);
+    ASSERT_EQ(double_blue.str(), "A rose that is blue");
+
+    // Test case 7: Complex nesting - Red, Blue, Red
+    Rose rose3;
+    RedFlower step1(rose3);
+    BlueFlower step2(step1);
+    RedFlower step3(step2);
+    // Should be "A rose that is red and blue" (red doesn't duplicate)
+    ASSERT_EQ(step3.str(), "A rose that is red and blue");
+
+    // Test case 8: Triple nesting with mixed colors
+    Rose rose4;
+    BlueFlower b1(rose4); // "A rose that is blue"
+    RedFlower r1(b1);     // "A rose that is blue and red"
+    BlueFlower b2(r1);    // "A rose that is blue and red" (blue no dup)
+    ASSERT_EQ(b2.str(), "A rose that is blue and red");
+
+    cout << " Flower decorator exercise";
+}
+
+// ============================================================================
 // TEST RUNNER
 // ============================================================================
 
@@ -434,6 +555,8 @@ int main()
     test_decorator_benefits_summary();
     cout << "\n";
     test_decorator_composition_flexibility();
+    cout << "\n";
+    test_flower_decorator_exercise();
     cout << "\n\n";
 
     // Summary
