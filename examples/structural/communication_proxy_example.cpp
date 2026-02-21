@@ -176,7 +176,7 @@ namespace retry_proxy
 
             if (random_val < failure_rate)
             {
-                cout << " - FAILED ❌" << endl;
+                cout << " - FAILED " << endl;
                 throw runtime_error("Network timeout");
             }
             else
@@ -747,3 +747,5 @@ int main()
 
     return 0;
 }
+
+

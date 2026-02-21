@@ -752,3 +752,29 @@ int main()
 
     return 0;
 }
+
+
+// Make sure this appears before Goblin::get_attack()
+
+
+class GoblinKing : public Goblin {
+public:
+    GoblinKing(Game& game) : Goblin(game, 3, 3) {}
+};
+
+
+int Goblin::get_attack() override {
+    int attack = base_attack;
+
+    for (auto c : game.creatures) {
+        if (c != this) {
+            // Make sure GoblinKing is fully defined at this point
+            if (dynamic_cast<GoblinKing*>(c)) {
+                attack += 1;
+            }
+        }
+    }
+
+    return attack;
+}
+

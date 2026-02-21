@@ -657,3 +657,4 @@ namespace memento_patterns
     } // namespace transaction_memento
 
 } // namespace memento_patterns
+
