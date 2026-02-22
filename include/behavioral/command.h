@@ -65,7 +65,7 @@ struct BankAccountCommand : Command
 
     BankAccountCommand(BankAccount &account, const Action action, const int amount)
         : account(account), action(action), amount(amount)
-    {
+    { 
     }
 
     void call() const override

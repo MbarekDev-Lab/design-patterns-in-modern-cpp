@@ -75,7 +75,7 @@ struct Command
     virtual ~Command() = default;
     virtual void call() = 0;
     virtual void undo() = 0;
-};
+}; 
 
 struct BankAccountCommand : Command
 {
