@@ -94,7 +94,7 @@ struct TemporaryCardDamageGame : CardGame
         other.health -= attacker.attack;
     }
 
-    // Override combat to handle temporary damage restoration per round
+    // Override combat to restore health after each round (temporary damage mechanic)
     int combat(int creature1, int creature2) override
     {
         int original_health1 = creatures[creature1].health;
@@ -116,13 +116,13 @@ struct TemporaryCardDamageGame : CardGame
 
             if (creature1_alive && !creature2_alive)
             {
-                // Only creature 1 survives
+                // Creature 1 survives - creature 1 wins
                 creatures[creature1].health = original_health1;
                 return creature1;
             }
             if (creature2_alive && !creature1_alive)
             {
-                // Only creature 2 survives
+                // Creature 2 survives - creature 2 wins
                 creatures[creature2].health = original_health2;
                 return creature2;
             }
@@ -142,14 +142,14 @@ struct TemporaryCardDamageGame : CardGame
             if (creatures[creature1].health == original_health1 &&
                 creatures[creature2].health == original_health2)
             {
-                // Both are back to original - infinite loop detected
+                // Both are back to original - no winner possible
                 creatures[creature1].health = original_health1;
                 creatures[creature2].health = original_health2;
                 return -1;
             }
         }
 
-        // Max rounds exceeded
+        // Max rounds exceeded - no winner
         creatures[creature1].health = original_health1;
         creatures[creature2].health = original_health2;
         return -1;
