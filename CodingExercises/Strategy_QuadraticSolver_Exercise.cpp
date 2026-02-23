@@ -278,7 +278,7 @@ void test_large_numbers()
 
     // Large coefficient equation
     // 1000x^2 + 2000x + 1 = 0
-    auto [x1, x2] = solver.solve(1000, 2000, 1);
+    (void)solver.solve(1000, 2000, 1);
 
     // Just verify no exception is thrown
     cout << "✓ Large numbers handling" << endl;
