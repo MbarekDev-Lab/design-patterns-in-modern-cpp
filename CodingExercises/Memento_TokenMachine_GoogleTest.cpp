@@ -1,6 +1,7 @@
 #include <iostream>
 #include <vector>
 #include <memory>
+#include "gtest/gtest.h"
 using namespace std;
 
 struct Token
@@ -40,8 +41,6 @@ struct TokenMachine
             tokens.emplace_back(make_shared<Token>(t->value));
     }
 };
-
-#include "gtest/gtest.h"
 
 namespace
 {

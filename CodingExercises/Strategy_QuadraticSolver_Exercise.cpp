@@ -393,3 +393,49 @@ int main()
         return 1;
     }
 }
+
+
+
+/*
+
+// Strategy Interface
+struct DiscriminantStrategy {
+    virtual double calculate_discriminant(double a, double b, double c) = 0;
+};
+
+// Strategy 1: Ordinary (allows complex solutions)
+struct OrdinaryDiscriminantStrategy : DiscriminantStrategy {
+    double calculate_discriminant(double a, double b, double c) override {
+        return b * b - 4 * a * c;  // Returns negative if needed
+    }
+};
+
+// Strategy 2: Real (returns NaN for negative discriminant)
+struct RealDiscriminantStrategy : DiscriminantStrategy {
+    double calculate_discriminant(double a, double b, double c) override {
+        double result = b * b - 4 * a * c;
+        return result >= 0 ? result : numeric_limits<double>::quiet_NaN();
+    }
+};
+
+// Solver using strategy pattern
+class QuadraticEquationSolver {
+    DiscriminantStrategy& strategy;
+public:
+    QuadraticEquationSolver(DiscriminantStrategy& strategy) : strategy(strategy) {}
+    
+    tuple<complex<double>, complex<double>> solve(double a, double b, double c) {
+        double disc = strategy.calculate_discriminant(a, b, c);
+        complex<double> disc_complex{disc, 0};
+        auto root_disc = sqrt(disc_complex);
+        
+        // x1 = (-b + √Δ) / 2a (+ result first)
+        // x2 = (-b - √Δ) / 2a (- result second)
+        complex<double> x1 = (-b + root_disc) / (2.0 * a);
+        complex<double> x2 = (-b - root_disc) / (2.0 * a);
+        
+        return {x1, x2};
+    }
+};
+
+*/

@@ -8,42 +8,42 @@ Completed course: [Design Patterns in Modern C++](https://www.udemy.com/course/p
 
 Patterns dealing with object creation mechanisms.
 
-| Pattern | Files | Tests |
-|---------|-------|-------|
-| **Singleton** | [Manual Testing](CodingExercises/Singleton_Testing_Manual.cpp) \| [Exercise](CodingExercises/Singleton_Testing_Exercise.cpp) \| [Tester](CodingExercises/Singleton_Tester.cpp) | ✓ |
-| **Factory Method** | [Exercise](CodingExercises/PersonFactory_Exercise.cpp) | ✓ |
-| **Builder** | [CodeBuilder](CodingExercises/CodeBuilder.cpp) | ✓ |
-| **Prototype** | [Exercise](CodingExercises/Prototype_Exercise.cpp) | ✓ |
-| **Multiton** | [Manual Implementation](CodingExercises/Multiton_Manual.cpp) | ✓ |
+| Pattern            | Files                                                                                                                                                                          | Tests |
+| ------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----- |
+| **Singleton**      | [Manual Testing](CodingExercises/Singleton_Testing_Manual.cpp) \| [Exercise](CodingExercises/Singleton_Testing_Exercise.cpp) \| [Tester](CodingExercises/Singleton_Tester.cpp) | ✓     |
+| **Factory Method** | [Exercise](CodingExercises/PersonFactory_Exercise.cpp)                                                                                                                         | ✓     |
+| **Builder**        | [CodeBuilder](CodingExercises/CodeBuilder.cpp)                                                                                                                                 | ✓     |
+| **Prototype**      | [Exercise](CodingExercises/Prototype_Exercise.cpp)                                                                                                                             | ✓     |
+| **Multiton**       | [Manual Implementation](CodingExercises/Multiton_Manual.cpp)                                                                                                                   | ✓     |
 
 ## 🏗️ Structural Patterns
 
 Patterns concerned with object composition and relationships.
 
-| Pattern | Files | Tests |
-|---------|-------|-------|
-| **Adapter** | [Exercise](CodingExercises/Adapter_Exercise.cpp) \| [Coding Exercise](CodingExercises/Adapter_Coding_Exercise.cpp) | ✓ |
-| **Bridge** | [Exercise](CodingExercises/Bridge_Exercise.cpp) | ✓ |
-| **Composite** | (Inferred from decorators & trees) | — |
-| **Decorator** | [Exercise](CodingExercises/Decorator_Exercise.cpp) \| [Flower GoogleTest](CodingExercises/Decorator_Flower_GoogleTest.cpp) | ✓ |
-| **Facade** | [Exercise](CodingExercises/Facade_Exercise.cpp) | ✓ |
-| **Flyweight** | [Exercise](CodingExercises/Flyweight_Exercise.cpp) \| [Sentence Exercise](CodingExercises/Flyweight_Sentence_Exercise.cpp) | ✓ |
-| **Proxy** | [Exercise](CodingExercises/Proxy_Exercise.cpp) \| [Protective Proxy](CodingExercises/ProtectiveProxy_Exercise.cpp) \| [Communication Proxy](CodingExercises/CommunicationProxy_Testing.cpp) | ✓ |
+| Pattern       | Files                                                                                                                                                                                       | Tests |
+| ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----- |
+| **Adapter**   | [Exercise](CodingExercises/Adapter_Exercise.cpp) \| [Coding Exercise](CodingExercises/Adapter_Coding_Exercise.cpp)                                                                          | ✓     |
+| **Bridge**    | [Exercise](CodingExercises/Bridge_Exercise.cpp)                                                                                                                                             | ✓     |
+| **Composite** | (Inferred from decorators & trees)                                                                                                                                                          | —     |
+| **Decorator** | [Exercise](CodingExercises/Decorator_Exercise.cpp) \| [Flower GoogleTest](CodingExercises/Decorator_Flower_GoogleTest.cpp)                                                                  | ✓     |
+| **Facade**    | [Exercise](CodingExercises/Facade_Exercise.cpp)                                                                                                                                             | ✓     |
+| **Flyweight** | [Exercise](CodingExercises/Flyweight_Exercise.cpp) \| [Sentence Exercise](CodingExercises/Flyweight_Sentence_Exercise.cpp)                                                                  | ✓     |
+| **Proxy**     | [Exercise](CodingExercises/Proxy_Exercise.cpp) \| [Protective Proxy](CodingExercises/ProtectiveProxy_Exercise.cpp) \| [Communication Proxy](CodingExercises/CommunicationProxy_Testing.cpp) | ✓     |
 
 ## 🎭 Behavioral Patterns
 
 Patterns concerned with object collaboration and responsibility distribution.
 
-| Pattern | Files | Tests |
-|---------|-------|-------|
-| **Observer** | [Rats Swarm Exercise](CodingExercises/Observer_Rats_Swarm_Exercise.cpp) \| [Alternative Implementation](CodingExercises/Observer_Rats_Alternative_Implementation.cpp) \| [Stock Prices](CodingExercises/Observer_StockPrices_Exercise.cpp) | 14+ ✓ |
-| **Strategy** | [Static Polymorphism](CodingExercises/Strategy_StaticPolymorphism.cpp) \| [Dynamic Polymorphism](CodingExercises/Strategy_DynamicPolymorphism.cpp) \| [Quadratic Solver Exercise](CodingExercises/Strategy_QuadraticSolver_Exercise.cpp) | 33+ ✓ |
-| **State** | [Classic LightSwitch](CodingExercises/State_Classic_LightSwitch.cpp) \| [Handmade PhoneStateMachine](CodingExercises/State_Handmade_PhoneStateMachine.cpp) \| [CombinationLock Exercise](CodingExercises/State_CombinationLock_Exercise.cpp) \| [Boost MSM Simplified](CodingExercises/State_Boost_MSM_Simplified.cpp) | 32+ ✓ |
-| **Template Method** | [Game Framework](CodingExercises/TemplateMethod_GameFramework.cpp) \| [Card Game Exercise](CodingExercises/TemplateMethod_CardGame_Exercise.cpp) \| [GoogleTest Version](CodingExercises/TemplateMethod_CardGame_Exercise_GoogleTest.cpp) | 13+ ✓ |
-| **Visitor** | [std::visit](CodingExercises/Behavioral.Visitor.std_visit.cpp) \| [Intrusive](CodingExercises/Behavioral.Visitor.visitor_intrusive.cpp) \| [Reflective](CodingExercises/Behavioral.Visitor.visitor_reflective.cpp) \| [Multimethods](CodingExercises/Behavioral.Visitor.multimethods.cpp) \| [Acyclic](CodingExercises/Behavioral.Visitor.visitor_acyclic.cpp) \| [Double Dispatch](CodingExercises/Behavioral.Visitor.visitor_double.cpp) \| [Expression Printer Exercise](CodingExercises/Visitor_ExpressionPrinter_Exercise.cpp) | 11 ✓ |
-| **Chain of Responsibility** | [Exercise](CodingExercises/ChainOfResponsibility_Exercise.cpp) \| [Goblin Game](CodingExercises/ChainOfResponsibility_GoblinGame_Exercise.cpp) | ✓ |
-| **Mediator** | [Exercise](CodingExercises/Mediator_Exercise.cpp) \| [Participant Exercise](CodingExercises/Mediator_ParticipantExercise.cpp) | ✓ |
-| **Memento** | [Exercise](CodingExercises/Memento_Exercise.cpp) \| [BankAccount](CodingExercises/Memento_BankAccount_Exercise.cpp) \| [TokenMachine](CodingExercises/Memento_TokenMachine_Exercise.cpp) \| [TokenMachine GoogleTest](CodingExercises/Memento_TokenMachine_GoogleTest.cpp) | ✓ |
+| Pattern                     | Files                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               | Tests |
+| --------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----- |
+| **Observer**                | [Rats Swarm Exercise](CodingExercises/Observer_Rats_Swarm_Exercise.cpp) \| [Alternative Implementation](CodingExercises/Observer_Rats_Alternative_Implementation.cpp) \| [Stock Prices](CodingExercises/Observer_StockPrices_Exercise.cpp)                                                                                                                                                                                                                                                                                          | 14+ ✓ |
+| **Strategy**                | [Static Polymorphism](CodingExercises/Strategy_StaticPolymorphism.cpp) \| [Dynamic Polymorphism](CodingExercises/Strategy_DynamicPolymorphism.cpp) \| [Quadratic Solver Exercise](CodingExercises/Strategy_QuadraticSolver_Exercise.cpp)                                                                                                                                                                                                                                                                                            | 33+ ✓ |
+| **State**                   | [Classic LightSwitch](CodingExercises/State_Classic_LightSwitch.cpp) \| [Handmade PhoneStateMachine](CodingExercises/State_Handmade_PhoneStateMachine.cpp) \| [CombinationLock Exercise](CodingExercises/State_CombinationLock_Exercise.cpp) \| [Boost MSM Simplified](CodingExercises/State_Boost_MSM_Simplified.cpp)                                                                                                                                                                                                              | 32+ ✓ |
+| **Template Method**         | [Game Framework](CodingExercises/TemplateMethod_GameFramework.cpp) \| [Card Game Exercise](CodingExercises/TemplateMethod_CardGame_Exercise.cpp) \| [GoogleTest Version](CodingExercises/TemplateMethod_CardGame_Exercise_GoogleTest.cpp)                                                                                                                                                                                                                                                                                           | 13+ ✓ |
+| **Visitor**                 | [std::visit](CodingExercises/Behavioral.Visitor.std_visit.cpp) \| [Intrusive](CodingExercises/Behavioral.Visitor.visitor_intrusive.cpp) \| [Reflective](CodingExercises/Behavioral.Visitor.visitor_reflective.cpp) \| [Multimethods](CodingExercises/Behavioral.Visitor.multimethods.cpp) \| [Acyclic](CodingExercises/Behavioral.Visitor.visitor_acyclic.cpp) \| [Double Dispatch](CodingExercises/Behavioral.Visitor.visitor_double.cpp) \| [Expression Printer Exercise](CodingExercises/Visitor_ExpressionPrinter_Exercise.cpp) | 11 ✓  |
+| **Chain of Responsibility** | [Exercise](CodingExercises/ChainOfResponsibility_Exercise.cpp) \| [Goblin Game](CodingExercises/ChainOfResponsibility_GoblinGame_Exercise.cpp)                                                                                                                                                                                                                                                                                                                                                                                      | ✓     |
+| **Mediator**                | [Exercise](CodingExercises/Mediator_Exercise.cpp) \| [Participant Exercise](CodingExercises/Mediator_ParticipantExercise.cpp)                                                                                                                                                                                                                                                                                                                                                                                                       | ✓     |
+| **Memento**                 | [Exercise](CodingExercises/Memento_Exercise.cpp) \| [BankAccount](CodingExercises/Memento_BankAccount_Exercise.cpp) \| [TokenMachine](CodingExercises/Memento_TokenMachine_Exercise.cpp) \| [TokenMachine GoogleTest](CodingExercises/Memento_TokenMachine_GoogleTest.cpp)                                                                                                                                                                                                                                                          | ✓     |
 
 ## 🏛️ SOLID Principles
 
@@ -84,21 +84,25 @@ clang++ -std=c++17 -Wall -Wextra -o /tmp/output CodingExercises/PatternName_Exer
 ### Quick Test Examples
 
 **Observer Pattern - Rats Exercise:**
+
 ```bash
 clang++ -std=c++17 -Wall -Wextra -o /tmp/observer CodingExercises/Observer_Rats_Swarm_Exercise.cpp && /tmp/observer
 ```
 
 **State Pattern - Phone State Machine:**
+
 ```bash
 clang++ -std=c++17 -Wall -Wextra -o /tmp/state CodingExercises/State_Handmade_PhoneStateMachine.cpp && /tmp/state
 ```
 
 **Strategy Pattern - Quadratic Solver:**
+
 ```bash
 clang++ -std=c++17 -Wall -Wextra -o /tmp/strategy CodingExercises/Strategy_QuadraticSolver_Exercise.cpp && /tmp/strategy
 ```
 
 **Visitor Pattern - Expression Printer:**
+
 ```bash
 clang++ -std=c++17 -Wall -Wextra -o /tmp/visitor CodingExercises/Visitor_ExpressionPrinter_Exercise.cpp && /tmp/visitor
 ```
@@ -108,7 +112,9 @@ clang++ -std=c++17 -Wall -Wextra -o /tmp/visitor CodingExercises/Visitor_Express
 ### Behavioral Patterns (Comprehensive Coverage)
 
 #### Observer Pattern
+
 Implements the publish-subscribe mechanism with automatic notification of state changes.
+
 - **Concepts**: Virtual function calls, event management, automatic RAII registration
 - **Files**:
   - [Observer_Rats_Swarm_Exercise](CodingExercises/Observer_Rats_Swarm_Exercise.cpp) - RAII-based rat tracking system
@@ -118,7 +124,9 @@ Implements the publish-subscribe mechanism with automatic notification of state 
 - **Key Benefits**: Loose coupling, automatic updates, centralized notification
 
 #### Strategy Pattern
+
 Encapsulates interchangeable algorithms, selecting them at runtime through polymorphism.
+
 - **Concepts**: Compile-time vs runtime strategies, function pointers, virtual inheritance
 - **Files**:
   - [Strategy_StaticPolymorphism](CodingExercises/Strategy_StaticPolymorphism.cpp) - Template-based compile-time selection
@@ -128,7 +136,9 @@ Encapsulates interchangeable algorithms, selecting them at runtime through polym
 - **Key Benefits**: Algorithm flexibility, runtime selection, reduced conditional logic
 
 #### State Pattern
+
 Allows objects to change behavior based on internal state transitions.
+
 - **Concepts**: State machines, transitions, virtual state handling
 - **Files**:
   - [State_Classic_LightSwitch](CodingExercises/State_Classic_LightSwitch.cpp) - Traditional OOP state pattern
@@ -139,7 +149,9 @@ Allows objects to change behavior based on internal state transitions.
 - **Key Benefits**: Clear state logic, simplified conditionals, explicit transitions
 
 #### Template Method Pattern
+
 Defines algorithm skeleton in base class, allowing subclasses to override specific steps.
+
 - **Concepts**: Inheritance, virtual functions, callback methods
 - **Files**:
   - [TemplateMethod_GameFramework](CodingExercises/TemplateMethod_GameFramework.cpp) - Chess, Checkers, Draughts games
@@ -149,7 +161,9 @@ Defines algorithm skeleton in base class, allowing subclasses to override specif
 - **Key Benefits**: Code reuse, algorithm consistency, extension points
 
 #### Visitor Pattern
+
 Adds new operations to object structures without changing the classes themselves (double-dispatch).
+
 - **Concepts**: Double-dispatch, visitor interface, recursive visitation
 - **Files**:
   - [Behavioral.Visitor.std_visit](CodingExercises/Behavioral.Visitor.std_visit.cpp) - Modern C++17 std::visit with variants
@@ -163,21 +177,27 @@ Adds new operations to object structures without changing the classes themselves
 - **Key Benefits**: Separation of concerns, easy addition of operations, type-safe visitations
 
 #### Chain of Responsibility
+
 Passes requests along a chain of handlers, each deciding whether to process or forward.
+
 - **Files**:
   - [ChainOfResponsibility_Exercise](CodingExercises/ChainOfResponsibility_Exercise.cpp)
   - [ChainOfResponsibility_GoblinGame_Exercise](CodingExercises/ChainOfResponsibility_GoblinGame_Exercise.cpp)
 - **Key Benefits**: Loose coupling, flexible handler chains
 
 #### Mediator
+
 Centralizes complex communication between objects to promote loose coupling.
+
 - **Files**:
   - [Mediator_Exercise](CodingExercises/Mediator_Exercise.cpp)
   - [Mediator_ParticipantExercise](CodingExercises/Mediator_ParticipantExercise.cpp)
 - **Key Benefits**: Centralized control, simplified object interactions
 
 #### Memento
+
 Captures and externalizes an object's internal state without violating encapsulation.
+
 - **Files**:
   - [Memento_Exercise](CodingExercises/Memento_Exercise.cpp)
   - [Memento_BankAccount_Exercise](CodingExercises/Memento_BankAccount_Exercise.cpp) - Transaction undoing
@@ -190,68 +210,90 @@ Captures and externalizes an object's internal state without violating encapsula
 ### Creational Patterns (Complete Coverage)
 
 #### Singleton
+
 Ensures a class has only one instance and provides global access to it.
-- **Files**: 
+
+- **Files**:
   - [Singleton_Testing_Manual](CodingExercises/Singleton_Testing_Manual.cpp)
   - [Singleton_Testing_Exercise](CodingExercises/Singleton_Testing_Exercise.cpp)
   - [Singleton_Tester](CodingExercises/Singleton_Tester.cpp)
 - **Key Benefits**: Single instance guarantee, lazy initialization, thread safety
 
 #### Factory Method
+
 Creates objects without specifying the exact classes to create.
+
 - **Files**: [PersonFactory_Exercise](CodingExercises/PersonFactory_Exercise.cpp)
 - **Key Benefits**: Decoupling object creation, flexible instantiation
 
 #### Builder
+
 Constructs complex objects step-by-step, separating construction from representation.
+
 - **Files**: [CodeBuilder](CodingExercises/CodeBuilder.cpp)
 - **Key Benefits**: Complex object creation, fluent interface, immutability support
 
 #### Prototype
+
 Clones objects rather than creating new instances from scratch.
+
 - **Files**: [Prototype_Exercise](CodingExercises/Prototype_Exercise.cpp)
 - **Key Benefits**: Object cloning, performance optimization
 
 #### Multiton
+
 Multiple controlled instances (singleton variation).
+
 - **Files**: [Multiton_Manual](CodingExercises/Multiton_Manual.cpp)
 - **Key Benefits**: Limited instances, named instances
 
 ### Structural Patterns (Complete Coverage)
 
 #### Adapter
+
 Converts interface of class into another interface clients expect.
+
 - **Files**:
   - [Adapter_Exercise](CodingExercises/Adapter_Exercise.cpp)
   - [Adapter_Coding_Exercise](CodingExercises/Adapter_Coding_Exercise.cpp)
 - **Key Benefits**: Interface compatibility, legacy code integration
 
 #### Bridge
+
 Decouples abstraction from implementation so they vary independently.
+
 - **Files**: [Bridge_Exercise](CodingExercises/Bridge_Exercise.cpp)
 - **Key Benefits**: Separation of concerns, flexible combinations
 
 #### Decorator
+
 Attaches additional responsibilities to object dynamically.
+
 - **Files**:
   - [Decorator_Exercise](CodingExercises/Decorator_Exercise.cpp)
   - [Decorator_Flower_GoogleTest](CodingExercises/Decorator_Flower_GoogleTest.cpp)
 - **Key Benefits**: Dynamic behavior extension, composition over inheritance
 
 #### Facade
+
 Provides unified interface to set of interfaces in subsystem.
+
 - **Files**: [Facade_Exercise](CodingExercises/Facade_Exercise.cpp)
 - **Key Benefits**: Simplified complex systems, unified interface
 
 #### Flyweight
+
 Uses sharing to support large numbers of fine-grained objects efficiently.
+
 - **Files**:
   - [Flyweight_Exercise](CodingExercises/Flyweight_Exercise.cpp)
   - [Flyweight_Sentence_Exercise](CodingExercises/Flyweight_Sentence_Exercise.cpp)
 - **Key Benefits**: Memory optimization, shared state management
 
 #### Proxy
+
 Provides placeholder/surrogate for another object to control access.
+
 - **Files**:
   - [Proxy_Exercise](CodingExercises/Proxy_Exercise.cpp)
   - [ProtectiveProxy_Exercise](CodingExercises/ProtectiveProxy_Exercise.cpp)
