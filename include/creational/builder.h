@@ -71,7 +71,7 @@ namespace builder_pattern
     // ============ Builder: HtmlBuilder ============
 
     /**
-     * ✅ SOLUTION: Builder pattern for constructing HtmlElement
+     *  SOLUTION: Builder pattern for constructing HtmlElement
      * Benefits:
      * 1. Clear, readable fluent interface
      * 2. No "telescoping constructors"
